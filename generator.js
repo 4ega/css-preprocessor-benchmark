@@ -1,16 +1,12 @@
 var fs = require('fs');
-var path = require('path');
-
 var args = process.argv.slice(2)
 var caseNum = args[0] || 'case1';
 var classCount = 1000;
 var filesCount = 3;
 var extension = args[1] || 'less';
 var dest = args[2] || 'less/';
-
 var text = "";
 var main = "";
-
 var block = fs.readFileSync('./source/' + caseNum + '/index.' + extension).toString();
 
 for(i = 0; i < classCount; i+=1) {
