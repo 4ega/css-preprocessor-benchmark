@@ -1,0 +1,55 @@
+$padding-#: #px;
+@mixin rounded-corners-# ($radius: 5px) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+.class-# {
+  position: absolute;
+  display: block;
+  padding: 10px;
+  margin: $padding-#;
+  boreder: none;
+  background: red;
+  font-size: 20px;
+  color: red;
+  text-transform: uppercase;
+  text-decoration: none;
+  @include rounded-corners-#(#px);
+
+  .sub-class-# {
+    position: absolute;
+    display: block;
+    padding: 10px;
+    margin: $padding-#;
+    boreder: none;
+    background: red;
+    font-size: 20px;
+    color: red;
+    text-transform: uppercase;
+    text-decoration: none;
+    @include rounded-corners-#(#px);
+
+    .sub-sub-class-# {
+      position: absolute;
+      display: block;
+      padding: 10px;
+      margin: $padding-#;
+      boreder: none;
+      background: red;
+      font-size: 20px;
+      color: red;
+      text-transform: uppercase;
+      text-decoration: none;
+      @include rounded-corners-#(#px);
+
+      a {
+        color: pink;
+
+        &:hover {
+          color: green;
+        }
+      }
+    }
+  }
+}

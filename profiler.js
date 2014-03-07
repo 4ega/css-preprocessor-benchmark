@@ -1,12 +1,13 @@
 var child_process = require('child_process');
 var async = require('async');
+var caseNum = process.argv[2] || 'case1';
 
 async.series([
   function (cb) {
     executeCommandsSilent([
-      'node generator.js case1 less less/',
-      'node generator.js case1 scss sass/',
-      'node generator.js case1 styl stylus/'
+      'node generator.js ' + caseNum + ' less less/',
+      'node generator.js ' + caseNum + ' scss sass/',
+      'node generator.js ' + caseNum + ' styl stylus/'
     ], cb)
   },
   function(cb) {
@@ -58,8 +59,10 @@ function executeCommandsSilent(arr, cb) {
 }
 
 function parseOut(stderr) {
-  stderr = stderr.replace(/(\r|\n)/g,"");
-  stderr = stderr.split('s')[0]
-  stderr = stderr.slice(stderr.indexOf('m') - 1)
+  stderr = stderr.replace(/(\r|\n)/g,"")
+    .split('s')[0]
+    .slice(stderr.indexOf('m') - 1)
+    .split('m')
+  stderr = (stderr[0] * 1000) + (stderr[1] * 1000)
   return stderr;
 }

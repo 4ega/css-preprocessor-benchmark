@@ -1,0 +1,47 @@
+@padding-#: #px;
+.class-# {
+  position: absolute;
+  display: block;
+  padding: @padding-#;
+  margin: 20px;
+  boreder: none;
+  background: red;
+  font-size: 20px;
+  color: red;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  .sub-class-# {
+    position: absolute;
+    display: block;
+    padding: @padding-#;
+    margin: 20px;
+    boreder: none;
+    background: red;
+    font-size: 20px;
+    color: red;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    .sub-sub-class-# {
+      position: absolute;
+      display: block;
+      padding: @padding-#;
+      margin: 20px;
+      boreder: none;
+      background: red;
+      font-size: 20px;
+      color: red;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      a {
+        color: pink;
+
+        &:hover {
+          color: green;
+        }
+      }
+    }
+  }
+}
