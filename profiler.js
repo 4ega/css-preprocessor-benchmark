@@ -5,6 +5,7 @@ var caseNum = process.argv[2] || 'case1';
 async.series([
   function (cb) {
     executeCommandsSilent([
+      'mkdir less sass stylus',
       'node generator.js ' + caseNum + ' less less/',
       'node generator.js ' + caseNum + ' scss sass/',
       'node generator.js ' + caseNum + ' styl stylus/'
@@ -29,7 +30,7 @@ async.series([
     executeCommand('sassc', 'time sassc -o ./sass/main.css ./sass/main.scss', cb);
   },
   function (cb) {
-    executeCommandsSilent(['rm -r .sass-cache', 'rm sass/*', 'rm less/*', 'rm stylus/*'], cb)
+    executeCommandsSilent(['rm -r .sass-cache sass less stylus'], cb)
   }
 ], function() {
   console.log('all done');
